@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="user_panel_MasterPage.master.cs" Inherits="user_panel_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style3
+        {
+            height: 37px;
+        }
+        .style4
+        {
+            height: 119px;
+        }
+        .style5
+        {
+            height: 29px;
+        }
+        
+        .style6
+        {
+            width: 100%;
+        }
+        
+        </style>
+        <link type="text/css" href="menu.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <table border="0" align="center" cellpadding="0" cellspacing="0" class="layout">
+  <tr>
+    <td align="left" valign="top" style="padding-left:20px; padding-top:20px; padding-right:15px;"><table width="745" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left" valign="top"><table width="745" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="16" align="left" valign="top" style="background-image:url(images/index_10.gif); background-repeat:repeat-y;">
+                <img src="images/index_03.gif" width="16" height="13" alt="" 
+                    style="width: 16px" /></td>
+            <td width="708" align="left" valign="top"><table border="0" cellpadding="0" 
+                    cellspacing="0" bgcolor="#FFF2DA" style="height: 450px; width: 904px">
+              <tr>
+                <td><table width="890px" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left" valign="top" class="style4">
+                        <asp:Image ID="Image1" runat="server" Height="159px" ImageUrl="~/adrotator_image/009.jpg" 
+                            Width="904px" />
+                      </td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top" class="style3">
+                        
+                        <table class="style6">
+                            <tr>
+                                <td width="10%">
+    <asp:Image ID="imguser" runat="server" Height="70px" Width="70px" />
+                                </td>
+                                <td width="12%">
+                                    Welcome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lblusername" runat="server"></asp:Label>
+                                    <br />
+                                </td>
+                                <td>
+                                    <div id="menu">
+                        <ul class="menu">
+        <li><a href="home_user.aspx" class="parent"><span>Home</span></a>
+        </li>
+        <li><a href="search_user.aspx"><span>Search</span></a>
+            </li>
+        <li><a href="#" class="parent"><span>Message</span></a>
+            <div><ul>
+                <li><a href="compose_user.aspx"><span>Compose</span></a>
+                </li>
+                <li><a href="inbox_user.aspx"><span>Inbox</span></a>
+                </li>
+                <li><a href="send_user.aspx"><span>Send</span></a></li>
+            </ul></div>
+        </li>
+        <li><a href="#"><span>Account Setting</span></a>
+             <div><ul>
+                <li><a href="changeusername_user.aspx"><span>Change User Name</span></a>
+                </li>
+                <li><a href="changedisplayname_user.aspx"><span>Change Display Name</span></a>
+                </li>
+                <li><a href="changepassword_user.aspx"><span>Change Password</span></a></li>
+                <li><a href="changephoto_user.aspx"><span>Change Photo</span></a></li>
+                <li><a href="removeaccount_user.aspx"><span>Remove account</span></a></li>
+            </ul></div>
+        </li>
+        <li><a href="#"><span>Other</span></a>
+            <div><ul>
+                <li><a href="sucessinsert.aspx"><span>Insert Success stories</span></a>
+                </li>
+                <li><a href="sucessstoriesuser.aspx"><span>View Success stories</span></a>
+                </li>
+                <li><a href="viewprofile_user.aspx"><span>View Profile</span></a>
+                </li>
+                <li><a class="parent"><span>Edit Profile</span></a>
+                <div><ul>
+                <li><a href="editbasic_user.aspx"><span>Edit Basic detail</span></a>
+                </li>
+                <li><a href="editpersonal_user.aspx"><span>Edit Personal detail</span></a>
+                </li>
+                <li><a href="editeducation_user.aspx"><span>Edit Education detail</span></a>
+                </li>
+                <li><a href="editreligious_user.aspx"><span>Edit Religious detail</span></a></li>
+                <li><a href="editlocation_user.aspx"><span>Edit Location detail</span></a></li>
+                <li><a href="editfamily_user.aspx"><span>Edit Family detail</span></a></li>
+            </ul></div>
+       </ul></div>
+        </li>
+        <li class="last"><a href="logoutuser.aspx"><span>Logout</span></a>
+        </li>
+    </ul></div>
+</td>
+                            </tr>
+                        </table>
+                        
+</td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top" class="style5">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                            </Triggers>
+                            <ContentTemplate>
+                                <asp:AdRotator ID="AdRotator1" runat="server" 
+                                    AdvertisementFile="~/XMLFilebride.xml" Height="200px" Width="900px" />
+                            </ContentTemplate>
+                            
+                        </asp:UpdatePanel>
+                        <br />
+                        <asp:Timer ID="Timer1" runat="server" Interval="2000">
+                        </asp:Timer>
+                        <br />
+                      </td>
+                  </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td style="padding-top:50px; padding-bottom:10px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <p>
+                            &nbsp;</p>
+                    </asp:ContentPlaceHolder>
+                  </td>
+              </tr>
+            </table></td>
+            <td width="21" align="left" valign="top" style="background-image:url(images/index_13.gif); background-repeat:repeat-y;"><img src="images/index_08.gif" alt="" width="21" height="20" /></td>
+          </tr>
+          <tr>
+            <td><img src="images/index_62.gif" width="16" height="20" alt="" /></td>
+            <td style="background-image:url(images/index_64.gif); background-repeat:repeat-x;">&nbsp;</td>
+            <td><img src="images/index_66.gif" width="21" height="20" alt="" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top"><table width="99%" border="0" align="center" cellpadding="0" cellspacing="0" style="background-image:url(images/index_69.gif); background-repeat:repeat-x;">
+          <tr>
+            <td width="2%" height="66" align="left" valign="top"><img src="images/index_68.gif" alt="" width="13" height="66" /></td>
+            <td width="97%" align="center" valign="top"><div style="text-align:center;">
+              <pre class="footer" style="padding-bottom:5px; padding-top:20px;"><a 
+                    href="home_user.aspx">Home </a>    |    <a 
+                    href="search_user.aspx">Search</a>|    <a 
+                    href="compose_user.aspx">Message</a>    |    <a href="changeusername_user.aspx">Account Setting</a>    |    <a 
+                    href="sucessstoriesuser.aspx">Other</a> <span class="footer" style="padding-bottom:5px; padding-top:20px;">    |    <a href="logoutuser.aspx">Logout</a></span></pre>
+                </div></td>
+            <td width="1%" align="right" valign="top"><img src="images/index_72.gif" alt="" width="11" height="66" /></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+    </form>
+    <div style="visibility:hidden">
+        <a href="http://apycom.com/">Apycom jQuery Menus</a>
+    </div>
+
+</body>
+</html>

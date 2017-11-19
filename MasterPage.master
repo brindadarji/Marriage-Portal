@@ -1,0 +1,178 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            background-image: url('images/index_18.gif');
+            background-repeat: no-repeat;
+            width: 6%;
+        }
+        .style3
+        {
+            height: 37px;
+        }
+        .style4
+        {
+            height: 119px;
+        }
+        .style5
+        {
+            height: 29px;
+        }
+        .style7
+        {
+            color: #B71B16;
+            font-weight: bold;
+            width: 7%;
+        }
+        .style8
+        {
+            color: #B71B16;
+            font-weight: bold;
+            width: 13%;
+        }
+        .style13
+        {
+            color: #B71B16;
+            font-weight: bold;
+            width: 10%;
+        }
+        .style14
+        {
+            background-image: url('images/index_18.gif');
+            background-repeat: no-repeat;
+            width: 5%;
+        }
+        .style15
+        {
+            color: #B71B16;
+            font-weight: bold;
+            width: 12%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <table border="0" align="center" cellpadding="0" cellspacing="0" class="layout">
+  <tr>
+    <td align="left" valign="top" style="padding-left:20px; padding-top:20px; padding-right:15px;"><table width="745" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left" valign="top"><table width="745" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="16" align="left" valign="top" style="background-image:url(images/index_10.gif); background-repeat:repeat-y;">
+                <img src="images/index_03.gif" width="16" height="13" alt="" 
+                    style="width: 16px" /></td>
+            <td width="708" align="left" valign="top"><table border="0" cellpadding="0" 
+                    cellspacing="0" bgcolor="#FFF2DA" style="height: 450px; width: 904px">
+              <tr>
+                <td><table width="890px" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left" valign="top" class="style4">
+                        <asp:Image ID="Image1" runat="server" Height="159px" ImageUrl="~/adrotator_image/009.jpg" 
+                            Width="904px" />
+                      </td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top" class="style3">
+                        <table border="0" cellspacing="0" cellpadding="0" style="width: 95%">
+                            <tr>
+                                <td height="29" align="center" valign="top" class="style1">
+                                    &nbsp;</td>
+                                <td align="center" valign="middle" class="style7">
+                                    <a href="Home.aspx" style="color: #CC0000">Home</a></td>
+                                <td align="center" valign="top" class="style1">
+                                    &nbsp;</td>
+                                <td align="center" valign="middle" class="style15">
+                                    <a href="Registration.aspx" style="color: #CC0000">Registration</a>
+                                </td>
+                                <td align="center" valign="top" class="style1">
+                                    &nbsp;</td>
+                                <td align="center" valign="middle" class="style13">
+                                    <a href="Login.aspx" style="color: #CC0000">Login</a></td>
+                                <td align="center" valign="top" class="style1">
+                                    &nbsp;</td>
+                                <td align="center" valign="middle" class="style13">
+                                    <a href="Search.aspx" shape="rect" style="color: #CC0000">Search</a></td>
+                                <td align="center" valign="top" class="style1">
+                                    &nbsp;</td>
+                                <td align="center" valign="middle" class="style8">
+                                    <a href="Sucessstories.aspx" style="color: #CC0000">Success stories</a></td>
+                                <td align="center" valign="top" class="style14">
+                                    &nbsp;</td>
+                                <td width="8%" align="center" valign="middle" class="menu">
+                                    <a href="Contact.aspx" style="color: #CC0000; text-decoration: underline;">Contact</a></td>
+                            </tr>
+                        </table>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top" class="style5">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                            </Triggers>
+                            <ContentTemplate>
+                                <asp:AdRotator ID="AdRotator1" runat="server" 
+                                    AdvertisementFile="~/XMLFilebride.xml" Height="200px" Width="900px" />
+                            </ContentTemplate>
+                            
+                        </asp:UpdatePanel>
+                        <br />
+                        <asp:Timer ID="Timer1" runat="server" Interval="2000">
+                        </asp:Timer>
+                        <br />
+                      </td>
+                  </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td style="padding-top:50px; padding-bottom:10px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <p>
+                            &nbsp;</p>
+                    </asp:ContentPlaceHolder>
+                  </td>
+              </tr>
+            </table></td>
+            <td width="21" align="left" valign="top" style="background-image:url(images/index_13.gif); background-repeat:repeat-y;"><img src="images/index_08.gif" alt="" width="21" height="20" /></td>
+          </tr>
+          <tr>
+            <td><img src="images/index_62.gif" width="16" height="20" alt="" /></td>
+            <td style="background-image:url(images/index_64.gif); background-repeat:repeat-x;">&nbsp;</td>
+            <td><img src="images/index_66.gif" width="21" height="20" alt="" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top"><table width="99%" border="0" align="center" cellpadding="0" cellspacing="0" style="background-image:url(images/index_69.gif); background-repeat:repeat-x;">
+          <tr>
+            <td width="2%" height="66" align="left" valign="top"><img src="images/index_68.gif" alt="" width="13" height="66" /></td>
+            <td width="97%" align="center" valign="top"><div style="text-align:center;">
+              <pre class="footer" style="padding-bottom:5px; padding-top:20px;"><a 
+                    href="Home.aspx">Home </a>    |    <a 
+                    href="Registration.aspx">Registration</a>|    <a 
+                    href="Login.aspx">Login</a>    |    <a href="Search.aspx">Search</a>    |    <a 
+                    href="sucessstories.aspx">Success stories</a> <span class="footer" style="padding-bottom:5px; padding-top:20px;">    |    <a href="Contact.aspx">Contact</a><a href="content.html"></a></span></pre>
+                </div></td>
+            <td width="1%" align="right" valign="top"><img src="images/index_72.gif" alt="" width="11" height="66" /></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+    </form>
+
+</body>
+</html>
